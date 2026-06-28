@@ -5,6 +5,7 @@ import '../../models/product.dart';
 import '../../providers/cart_provider.dart';
 import '../../utils/currency_formatter.dart';
 import '../../widgets/rating_stars.dart';
+import '../cart/cart_screen.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final Product product;
@@ -50,8 +51,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Added $_quantity × ${widget.product.name} to cart'),
-        duration: const Duration(seconds: 2),
+        duration: const Duration(seconds: 3),
         behavior: SnackBarBehavior.floating,
+        action: SnackBarAction(
+          label: 'View Cart',
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const CartScreen()),
+          ),
+        ),
       ),
     );
   }

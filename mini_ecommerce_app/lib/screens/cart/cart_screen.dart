@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../providers/cart_provider.dart';
 import '../../providers/orders_provider.dart';
 import '../../utils/currency_formatter.dart';
+import '../payment/payment_screen.dart';
 import 'widgets/cart_item_tile.dart';
 
 class CartScreen extends StatelessWidget {
@@ -13,6 +14,14 @@ class CartScreen extends StatelessWidget {
     final cart = context.read<CartProvider>();
     final orders = context.read<OrdersProvider>();
     if (cart.isEmpty) return;
+
+    final paid = await Navigator.of(context).push<bool>(
+      MaterialPageRoute(
+        builder: (_) => PaymentScreen(total: cart.totalPrice),
+      ),
+    );
+    if (paid != true) return;
+    if (!context.mounted) return;
 
     final order = orders.placeOrder(cart.items, cart.totalPrice);
     cart.clear();

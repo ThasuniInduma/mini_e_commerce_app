@@ -27,7 +27,10 @@ class _MainScreenState extends State<MainScreen> {
       body: IndexedStack(index: _index, children: _screens),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
-        onDestinationSelected: (i) => setState(() => _index = i),
+        onDestinationSelected: (i) {
+          FocusManager.instance.primaryFocus?.unfocus();
+          setState(() => _index = i);
+        },
         destinations: [
           const NavigationDestination(
             icon: Icon(Icons.storefront_outlined),
