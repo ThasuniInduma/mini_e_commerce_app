@@ -1,30 +1,39 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 
-import 'package:mini_ecommerce_app/main.dart';
+import 'package:mini_ecommerce_app/app.dart';
+import 'package:mini_ecommerce_app/data/mock_products.dart';
+import 'package:mini_ecommerce_app/providers/cart_provider.dart';
+import 'package:mini_ecommerce_app/providers/orders_provider.dart';
+import 'package:mini_ecommerce_app/providers/theme_provider.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  Widget buildApp() {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider(mockProducts)),
+        ChangeNotifierProvider(create: (_) => OrdersProvider(mockProducts)),
+      ],
+      child: const MiniEcommerceApp(),
+    );
+  }
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('App boots and shows the splash screen first', (tester) async {
+    await tester.pumpWidget(buildApp());
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(find.text('Mini Mart'), findsOneWidget);
+    expect(find.byIcon(Icons.shopping_bag_rounded), findsOneWidget);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('Splash screen navigates to login screen', (tester) async {
+    await tester.pumpWidget(buildApp());
+
+    // Splash screen auto-navigates after ~1.8s.
+    await tester.pumpAndSettle(const Duration(seconds: 3));
+
+    expect(find.text('Welcome back'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, 'Login'), findsOneWidget);
   });
 }
