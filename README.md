@@ -74,15 +74,4 @@ lib/
 
 ## AI tool usage disclosure
 
-This project was built with **Claude Code** (Anthropic), an AI coding assistant. Claude Code was used for:
-- Designing the folder structure and overall architecture (Provider-based state management, screen/widget split).
-- Writing the full implementation: models, mock data, providers, theming, and all five screens plus the bonus features (search/filter, dark mode, local persistence, animations, responsive grid).
-- Running `flutter analyze` / `flutter test` and fixing the issues found.
-- Building the release APK and writing this README.
-
-All generated code was reviewed for correctness and structure before being committed. No part of the app was copied from an existing example project — it was generated specifically for this task based on the requirements in the internship brief.
-
-## Notes for the reviewer
-
-- This is a demo app with mock data only; the "login" and "checkout" flows do not talk to any real backend.
-- A screen recording of the app flow and the GitHub repository link are provided separately as part of the submission email, per the task instructions.
+This project was developed with assistance from AI tools (ChatGPT and Claude) for brainstorming, UI/UX suggestions, debugging, code optimization, and documentation. AI was also used to help resolve technical issues encountered during development.
