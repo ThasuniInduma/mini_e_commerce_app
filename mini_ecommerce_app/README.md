@@ -18,7 +18,7 @@ A small, fully-functional mock e-commerce app built with Flutter for the CyphLab
 - ✨ Animations — Hero image transitions between the product grid and details screen, a tap-feedback animation on "Add to Cart", an animated cart badge, and fade transitions for splash/login.
 - 📱 Responsive layout — the product grid adapts from 2 columns (phone) up to 4 columns (tablet/wide screens) using `LayoutBuilder`.
 - 🧾 Clean, incremental Git commit history (see `git log`).
-- 📦 Release APK build (see below).
+- 📦 Release APK build.
 
 ## Tech stack
 
@@ -26,7 +26,6 @@ A small, fully-functional mock e-commerce app built with Flutter for the CyphLab
 - **State management:** [`provider`](https://pub.dev/packages/provider) — `CartProvider`, `ThemeProvider`, `OrdersProvider`
 - **Persistence:** [`shared_preferences`](https://pub.dev/packages/shared_preferences)
 - **Formatting:** [`intl`](https://pub.dev/packages/intl) for currency display
-- **Images:** [picsum.photos](https://picsum.photos) placeholder images (requires internet access when running)
 
 ## Project structure
 
@@ -69,8 +68,6 @@ lib/
    flutter build apk --release
    ```
    The APK is output to `build/app/outputs/flutter-apk/app-release.apk`.
-
-> The app fetches placeholder product images over the network (picsum.photos). An internet connection is needed the first time each image loads.
 
 ## AI tool usage disclosure
 
