@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       size: 48,
                       color: colorScheme.primary,
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 15),
                     Text(
                       'Welcome back',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Sign in to continue shopping',
                       style: TextStyle(color: colorScheme.onSurfaceVariant),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 50),
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -132,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Demo login — any valid-looking email and a password '
+                      'Demo login - any valid-looking email and a password '
                       'of 4+ characters will work.',
                       style: TextStyle(
                         fontSize: 12,

@@ -79,7 +79,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
                       tag: 'product-image-${product.id}',
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(maxHeight: 320),
-                        child: Image.network(
+                        child: Image.asset(
                           product.imageUrl,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) =>

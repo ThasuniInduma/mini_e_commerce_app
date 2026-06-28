@@ -27,19 +27,10 @@ class ProductCard extends StatelessWidget {
             Expanded(
               child: Hero(
                 tag: 'product-image-${product.id}',
-                child: Image.network(
+                child: Image.asset(
                   product.imageUrl,
                   width: double.infinity,
                   fit: BoxFit.cover,
-                  loadingBuilder: (context, child, progress) {
-                    if (progress == null) return child;
-                    return Container(
-                      color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                      child: const Center(
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    );
-                  },
                   errorBuilder: (context, error, stackTrace) => Container(
                     color: Theme.of(context).colorScheme.surfaceContainerHighest,
                     child: const Icon(Icons.image_not_supported_outlined),

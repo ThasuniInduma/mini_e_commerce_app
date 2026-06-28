@@ -9,7 +9,7 @@ const List<String> categories = [
   'Beauty',
 ];
 
-String _imageFor(String seed) => 'https://picsum.photos/seed/$seed/600/600';
+String _imageFor(String fileName) => 'assets/$fileName';
 
 final List<Product> mockProducts = [
   Product(
@@ -22,7 +22,7 @@ final List<Product> mockProducts = [
         'Over-ear wireless headphones with active noise cancellation, '
         '30-hour battery life, and plush memory-foam ear cushions for '
         'all-day comfort.',
-    imageUrl: _imageFor('headphones'),
+    imageUrl: _imageFor('headphones.png'),
   ),
   Product(
     id: 'p2',
@@ -33,7 +33,7 @@ final List<Product> mockProducts = [
     description:
         'Track your fitness, heart rate, and sleep with this sleek smart '
         'watch. Water-resistant and compatible with iOS and Android.',
-    imageUrl: _imageFor('smartwatch'),
+    imageUrl: _imageFor('smartwatch.png'),
   ),
   Product(
     id: 'p3',
@@ -44,7 +44,7 @@ final List<Product> mockProducts = [
     description:
         'Portable speaker with rich bass, 12-hour playtime, and an IPX7 '
         'waterproof rating — perfect for the beach or a backyard party.',
-    imageUrl: _imageFor('speaker'),
+    imageUrl: _imageFor('speaker.webp'),
   ),
   Product(
     id: 'p4',
@@ -55,7 +55,7 @@ final List<Product> mockProducts = [
     description:
         'RGB-backlit mechanical keyboard with tactile switches, durable '
         'aluminum frame, and detachable USB-C cable.',
-    imageUrl: _imageFor('keyboard'),
+    imageUrl: _imageFor('keyboard.jpg'),
   ),
   Product(
     id: 'p5',
@@ -66,7 +66,7 @@ final List<Product> mockProducts = [
     description:
         'A timeless denim jacket with a relaxed fit, button closures, and '
         'durable stitching that only gets better with age.',
-    imageUrl: _imageFor('jacket'),
+    imageUrl: _imageFor('jacket.jpg'),
   ),
   Product(
     id: 'p6',
@@ -77,7 +77,7 @@ final List<Product> mockProducts = [
     description:
         'Lightweight running sneakers with breathable mesh uppers and '
         'cushioned soles built for long-distance comfort.',
-    imageUrl: _imageFor('sneakers'),
+    imageUrl: _imageFor('sneakers.jpeg'),
   ),
   Product(
     id: 'p7',
@@ -88,7 +88,7 @@ final List<Product> mockProducts = [
     description:
         'Genuine leather crossbody bag with adjustable strap and multiple '
         'compartments for everyday essentials.',
-    imageUrl: _imageFor('bag'),
+    imageUrl: _imageFor('bag.jpeg'),
   ),
   Product(
     id: 'p8',
@@ -99,7 +99,7 @@ final List<Product> mockProducts = [
     description:
         'UV-protected aviator sunglasses with a polished metal frame and '
         'polarized lenses to cut glare on bright days.',
-    imageUrl: _imageFor('sunglasses'),
+    imageUrl: _imageFor('sunglasses.jpeg'),
   ),
   Product(
     id: 'p9',
@@ -110,7 +110,7 @@ final List<Product> mockProducts = [
     description:
         'Set of four hand-glazed ceramic mugs, microwave and dishwasher '
         'safe, perfect for your morning coffee ritual.',
-    imageUrl: _imageFor('mug'),
+    imageUrl: _imageFor('mug.jpeg'),
   ),
   Product(
     id: 'p10',
@@ -121,7 +121,7 @@ final List<Product> mockProducts = [
     description:
         'Hand-poured soy wax candle with a warm vanilla-sandalwood scent '
         'and a 45-hour burn time.',
-    imageUrl: _imageFor('candle'),
+    imageUrl: _imageFor('candle.png'),
   ),
   Product(
     id: 'p11',
@@ -132,7 +132,7 @@ final List<Product> mockProducts = [
     description:
         'Minimalist ceramic plant pot with drainage hole and bamboo tray, '
         'ideal for succulents and small houseplants.',
-    imageUrl: _imageFor('plantpot'),
+    imageUrl: _imageFor('plantpot.png'),
   ),
   Product(
     id: 'p12',
@@ -143,7 +143,7 @@ final List<Product> mockProducts = [
     description:
         'Extra-thick non-slip yoga mat with carrying strap, made from '
         'eco-friendly TPE material for cushioned support.',
-    imageUrl: _imageFor('yogamat'),
+    imageUrl: _imageFor('yogamat.png'),
   ),
   Product(
     id: 'p13',
@@ -154,7 +154,7 @@ final List<Product> mockProducts = [
     description:
         'Space-saving adjustable dumbbells ranging from 2.5kg to 24kg per '
         'hand, with a quick-change weight selector dial.',
-    imageUrl: _imageFor('dumbbell'),
+    imageUrl: _imageFor('dumbbell.png'),
   ),
   Product(
     id: 'p14',
@@ -165,7 +165,7 @@ final List<Product> mockProducts = [
     description:
         'Double-wall vacuum insulated bottle that keeps drinks cold for '
         '24 hours or hot for 12, leak-proof lid included.',
-    imageUrl: _imageFor('bottle'),
+    imageUrl: _imageFor('bottle.png'),
   ),
   Product(
     id: 'p15',
@@ -176,7 +176,7 @@ final List<Product> mockProducts = [
     description:
         'Brightening vitamin C serum with hyaluronic acid to even skin '
         'tone and boost hydration, suitable for all skin types.',
-    imageUrl: _imageFor('serum'),
+    imageUrl: _imageFor('serum.png'),
   ),
   Product(
     id: 'p16',
@@ -187,6 +187,6 @@ final List<Product> mockProducts = [
     description:
         'Boar-bristle brush that gently detangles, reduces frizz, and '
         'distributes natural oils for healthier-looking hair.',
-    imageUrl: _imageFor('hairbrush'),
+    imageUrl: _imageFor('hairbrush.webp'),
   ),
 ];

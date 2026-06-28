@@ -45,10 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final themeProvider = context.watch<ThemeProvider>();
     final products = _filteredProducts;
-
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mini Mart'),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.shopping_bag, size: 26, color: colorScheme.primary,),
+            const SizedBox(width: 8),
+            Text('Mini Mart', style: TextStyle(color: colorScheme.primary,),),
+          ],
+        ),
         actions: [
           IconButton(
             tooltip: 'Toggle theme',
