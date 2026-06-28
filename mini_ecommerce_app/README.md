@@ -1,31 +1,22 @@
 # Mini Mart — Mini E-commerce Flutter App
 
-A small, fully-functional mock e-commerce app built with Flutter for the CyphLab Flutter Developer Intern practical task. All data is local/mock — there is no backend.
+A small, fully-functional mock e-commerce app built with Flutter.
 
 ## Features
-
-**Required**
-- Splash screen with a brand animation, followed by a mock login screen (any email containing `@` and a password of 4+ characters logs you in — no real auth/backend).
-- Product home screen — responsive grid of products with image, name, price, and star rating.
-- Product details screen — image, name, price, description, rating, quantity selector, and an animated "Add to Cart" button.
-- Cart screen — quantity increase/decrease, remove item (swipe or button), live total price, and checkout.
-- Profile / Orders screen — static profile card, dark mode toggle, and order history (seeded with mock orders, plus any orders placed via checkout).
-
-**Bonus**
-- 🔎 Product search (by name) and category filter chips on the home screen.
-- 🌓 Dark mode, toggleable from the home app bar or the Profile screen.
-- 💾 Local persistence via `shared_preferences` — cart contents, theme choice, and order history all survive an app restart.
-- ✨ Animations — Hero image transitions between the product grid and details screen, a tap-feedback animation on "Add to Cart", an animated cart badge, and fade transitions for splash/login.
-- 📱 Responsive layout — the product grid adapts from 2 columns (phone) up to 4 columns (tablet/wide screens) using `LayoutBuilder`.
-- 🧾 Clean, incremental Git commit history (see `git log`).
-- 📦 Release APK build.
-
+- Splash screen with a brand animation, followed by a mock login screen.
+- Product home screen - responsive grid of products with image, name, price, and star rating.
+- Product details screen - image, name, price, description, rating, quantity selector, and an animated "Add to Cart" button.
+- Cart screen - quantity increase/decrease, remove item, live total price, payment and checkout.
+- Profile / Orders screen — static profile card, dark mode toggle, and order history.
+- Product search and category filter chips on the home screen.
+- Dark mode, toggleable from the home app bar or the Profile screen.
+  
 ## Tech stack
 
-- **Flutter** (Dart 3.8, Material 3)
+- **Flutter** 
 - **State management:** [`provider`](https://pub.dev/packages/provider) — `CartProvider`, `ThemeProvider`, `OrdersProvider`
 - **Persistence:** [`shared_preferences`](https://pub.dev/packages/shared_preferences)
-- **Formatting:** [`intl`](https://pub.dev/packages/intl) for currency display
+- **Formatting:** [`intl`](https://pub.dev/packages/intl) 
 
 ## Project structure
 
@@ -50,7 +41,7 @@ lib/
 
 ## Getting started
 
-1. Install [Flutter](https://docs.flutter.dev/get-started/install) (3.32+ recommended) and run `flutter doctor` to confirm your setup.
+1. Install [Flutter](https://docs.flutter.dev/get-started/install) and run `flutter doctor` to confirm your setup.
 2. Install dependencies:
    ```bash
    flutter pub get
